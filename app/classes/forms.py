@@ -2,6 +2,7 @@
 # and users fill them out.  Each form is an instance of of a class. Forms are managed by the 
 # Flask-WTForms library.
 
+import string
 from flask.app import Flask
 from flask import flash
 from flask_wtf import FlaskForm
@@ -20,7 +21,9 @@ class LoginForm(FlaskForm):
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
-    email = StringField('Email', validators=[DataRequired(), Email()])  
+    email = StringField('Email', validators=[DataRequired(), Email()]) 
+    fname = StringField('First Name', validators=[DataRequired()]) 
+    lname = StringField('Last Name', validators=[DataRequired()]) 
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
