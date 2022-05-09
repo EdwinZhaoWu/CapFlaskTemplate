@@ -17,3 +17,7 @@ def aboutpangolins():
 @app.route('/conservationpage')
 def conservationpage():
     return render_template('conservationpage.html')
+
+@app.route('/donation')
+def donation():
+    return render_template('donation.html')
