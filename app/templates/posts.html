@@ -33,8 +33,7 @@
                 {% if loop.index == 1 %}
                     <h3 class="display-5">Subject</h3>
                 {% endif %}
-                
-                {{post.subject}}
+                <a href="/post/{{post.id}}">{{post.subject}}</a>
             </div>
         </div>
     {% endfor %}
